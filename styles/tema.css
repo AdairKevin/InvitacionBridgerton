@@ -1,0 +1,103 @@
+/* =========================================================
+   TEMA BRIDGERTON: regencia, rosa empolvado y dorado,
+   estilo periódico de sociedad
+   ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap");
+
+:root {
+  --t-primario: #a07070;
+  --t-acento: #c9a44c;
+  --t-texto: #5b4a46;
+  --t-card: #fffaf3;
+  --t-borde: rgba(201, 164, 76, 0.6);
+  --t-boton: var(--gold-gradient);
+  --t-boton-texto: #3a2c22;
+  --t-brillo: rgba(201, 164, 76, 0.35);
+  --t-font-script: "Pinyon Script", cursive;
+  --t-font-titulo: "Playfair Display", serif;
+  --t-font-texto: "Cormorant Garamond", serif;
+  --t-icono-dia: "❀";
+}
+
+/* Pétalos y destellos */
+.petalo {
+  width: 14px;
+  height: 18px;
+  background: radial-gradient(circle at 30% 30%, #f6d6da, #d99aa3);
+  border-radius: 80% 0 80% 0;
+  box-shadow: inset -2px -2px 4px rgba(160, 80, 90, 0.3);
+}
+.destello {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f6e27a;
+  box-shadow: 0 0 10px 3px rgba(246, 226, 122, 0.8);
+}
+
+/* Título con brillo dorado que recorre las letras */
+.titulo h1 {
+  background-size: 300% auto;
+  animation:
+    aparecer 1.4s ease both,
+    brillo-dorado 5s linear infinite 1.4s;
+}
+@keyframes brillo-dorado {
+  to {
+    background-position: 300% center;
+  }
+}
+
+/* Periódico de sociedad: marco doble */
+.box-info {
+  outline: 1px solid var(--t-borde);
+  outline-offset: -12px;
+}
+.sociedad img {
+  animation: balanceo 4s ease-in-out infinite;
+}
+.sociedad h1 {
+  letter-spacing: 2px;
+}
+@keyframes balanceo {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+/* Contador con marco de camafeo */
+.date-time li {
+  border-radius: 50% 50% 14px 14px;
+  border-color: var(--t-acento);
+}
+
+/* Sello de cera que palpita invitando a abrir */
+.wax-seal {
+  animation: palpitar 1.8s ease-in-out infinite;
+  cursor: pointer;
+}
+@keyframes palpitar {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(201, 164, 76, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(201, 164, 76, 0.9));
+  }
+}
+
+/* Mensaje final como carta sellada */
+.box-message {
+  border: 1px solid var(--t-borde);
+  outline: 1px solid var(--t-borde);
+  outline-offset: 6px;
+}
+.box-message::before {
+  content: "✉";
+  font-size: 1.8rem;
+  color: var(--t-acento);
+}
